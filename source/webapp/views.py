@@ -68,11 +68,13 @@ class ArticleUpdateView(View):
             return render(request, 'update.html', context={'form': form, 'article': article})
 
 
-def ArticlDeleteView(request, pk):
-    article = get_object_or_404(Article, pk=pk)
-    if request.method == 'GET':
+class ArticleDeleteView(View):
+    def get(self, request, *args, **kwargs):
+        article = get_object_or_404(Article, pk=kwargs.get('pk'))
         return render(request, 'delete.html', context={'article': article})
-    elif request.method == 'POST':
+
+    def post(self, request, *args, **kwargs):
+        article = get_object_or_404(Article, pk=kwargs.get('pk'))
         article.delete()
         return redirect('index')
 
