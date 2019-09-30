@@ -10,6 +10,7 @@
         <h2>{{ comment.article }}</h2>
         <p>{{ comment.text }}</p>
         <p>{{ comment.author }}</p>
+        <li><a href="{% url 'comment_update' comment.pk %}">Edit</a></li>
         <hr/>
     {% endfor %}
 {% endblock %}

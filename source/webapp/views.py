@@ -92,8 +92,7 @@ class CommentCreateView(View):
                 text=form.cleaned_data['text'],
                 article=form.cleaned_data['article']
             )
-            # это нужно исправить на ваш url.
-            return redirect('article_view', pk=comment.article.pk)
+            return redirect('comment_view', pk=comment.article.pk)
         else:
             return render(request, 'comment/create.html', context={'form': form})
 
@@ -104,3 +103,25 @@ class CommentView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['comments'] = Comment.objects.all()
         return context
+
+class CommentUpdateView(View):
+    def get(self, request, *args, **kwargs):
+        comment = get_object_or_404(Comment, pk=kwargs.get('pk'))
+        form = ArticleForm(data={
+            'article': comment.article,
+            'author': comment.author,
+            'text': comment.text
+        })
+        return render(request, 'comment/update.html', context={'form': form, 'comment': comment})
+
+    def post(self, request, *args, **kwargs):
+        comment = get_object_or_404(Comment, pk=kwargs.get('pk'))
+        form = CommentForm(data=request.POST)
+        if form.is_valid():
+            comment.article = form.cleaned_data['article']
+            comment.author = form.cleaned_data['author']
+            comment.text = form.cleaned_data['text']
+            comment.save()
+            return redirect('comment_view', pk=comment.pk)
+        else:
+            return render(request, 'comment/update.html', context={'form': form, 'comment': comment})
