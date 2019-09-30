@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+{% endblock %}
+
+{% block content %}
+    <h1>Comments:</h1>
+    <hr/>
+    {% for comment in comments %}
+        <h2>{{ comment.article }}</h2>
+        <p>{{ comment.text }}</p>
+        <p>{{ comment.author }}</p>
+        <hr/>
+    {% endfor %}
+{% endblock %}
