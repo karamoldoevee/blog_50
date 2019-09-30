@@ -92,7 +92,7 @@ class CommentCreateView(View):
                 text=form.cleaned_data['text'],
                 article=form.cleaned_data['article']
             )
-            return redirect('comment_view', pk=comment.article.pk)
+            return redirect('comment_view')
         else:
             return render(request, 'comment/create.html', context={'form': form})
 
@@ -122,6 +122,18 @@ class CommentUpdateView(View):
             comment.author = form.cleaned_data['author']
             comment.text = form.cleaned_data['text']
             comment.save()
-            return redirect('comment_view', pk=comment.pk)
+            return redirect('comment_view')
         else:
             return render(request, 'comment/update.html', context={'form': form, 'comment': comment})
+
+class CommentDeleteView(View):
+    def get(self, request, *args, **kwargs):
+        comment = get_object_or_404(Comment, pk=kwargs.get('pk'))
+        return render(request, 'comment/delete.html', context={'comment': comment})
+
+    def post(self, request, *args, **kwargs):
+        comment = get_object_or_404(Comment, pk=kwargs.get('pk'))
+        comment.delete()
+        return redirect('comment_view')
+
+
