@@ -6,6 +6,7 @@ class ArticleForm(forms.ModelForm):
     class Meta:
         model = Article
         exclude = ['created_at', 'updated_at']
+        tags = forms.CharField(max_length=31, required=False)
 
 
 class CommentForm(forms.ModelForm):

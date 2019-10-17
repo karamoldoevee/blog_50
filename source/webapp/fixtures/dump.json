@@ -1,10 +1,272 @@
 [
 {
+  "model": "webapp.article",
+  "pk": 8,
+  "fields": {
+    "title": "Article",
+    "text": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"",
+    "author": "Author",
+    "created_at": "2019-10-17T14:05:46.587Z",
+    "updated_at": "2019-10-17T14:05:46.587Z",
+    "category": 4,
+    "status": "active",
+    "tags": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 9,
+  "fields": {
+    "title": "ArticleUpdated",
+    "text": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"",
+    "author": "AuthorUpdated",
+    "created_at": "2019-10-17T14:09:38.431Z",
+    "updated_at": "2019-10-17T14:09:38.431Z",
+    "category": 5,
+    "status": "active",
+    "tags": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 10,
+  "fields": {
+    "title": "ArticleDeleted",
+    "text": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"",
+    "author": "AuthorDeleted",
+    "created_at": "2019-10-17T14:10:49.620Z",
+    "updated_at": "2019-10-17T14:12:11.980Z",
+    "category": 6,
+    "status": "archived",
+    "tags": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 11,
+  "fields": {
+    "title": "ArticleCreated",
+    "text": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"",
+    "author": "AuthorCreated",
+    "created_at": "2019-10-17T14:11:34.494Z",
+    "updated_at": "2019-10-17T14:11:34.494Z",
+    "category": 6,
+    "status": "active",
+    "tags": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 6,
+  "fields": {
+    "article": 8,
+    "text": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qu",
+    "author": "Amonym",
+    "created_at": "2019-10-17T14:05:56.975Z",
+    "updated_at": "2019-10-17T14:05:56.975Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 7,
+  "fields": {
+    "article": 8,
+    "text": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qu",
+    "author": "AmonymTwo",
+    "created_at": "2019-10-17T14:06:08.280Z",
+    "updated_at": "2019-10-17T14:06:08.280Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 8,
+  "fields": {
+    "article": 8,
+    "text": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qu",
+    "author": "AmonymThree",
+    "created_at": "2019-10-17T14:08:34.296Z",
+    "updated_at": "2019-10-17T14:08:34.296Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 9,
+  "fields": {
+    "article": 9,
+    "text": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qu",
+    "author": "Amonym",
+    "created_at": "2019-10-17T14:09:44.804Z",
+    "updated_at": "2019-10-17T14:09:44.804Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 10,
+  "fields": {
+    "article": 9,
+    "text": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qu",
+    "author": "AmonymTwo",
+    "created_at": "2019-10-17T14:09:51.116Z",
+    "updated_at": "2019-10-17T14:09:51.116Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 11,
+  "fields": {
+    "article": 9,
+    "text": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qu",
+    "author": "AmonymThree",
+    "created_at": "2019-10-17T14:10:21.528Z",
+    "updated_at": "2019-10-17T14:10:21.528Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 12,
+  "fields": {
+    "article": 10,
+    "text": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qu",
+    "author": "Amonym",
+    "created_at": "2019-10-17T14:10:55.937Z",
+    "updated_at": "2019-10-17T14:10:55.937Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 13,
+  "fields": {
+    "article": 10,
+    "text": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qu",
+    "author": "AmonymTwo",
+    "created_at": "2019-10-17T14:11:03.225Z",
+    "updated_at": "2019-10-17T14:11:03.225Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 14,
+  "fields": {
+    "article": 10,
+    "text": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qu",
+    "author": "AmonymThree",
+    "created_at": "2019-10-17T14:11:10.933Z",
+    "updated_at": "2019-10-17T14:11:10.933Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 15,
+  "fields": {
+    "article": 11,
+    "text": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qu",
+    "author": "Amonym",
+    "created_at": "2019-10-17T14:11:40.552Z",
+    "updated_at": "2019-10-17T14:11:40.552Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 16,
+  "fields": {
+    "article": 11,
+    "text": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qu",
+    "author": "AmonymTwo",
+    "created_at": "2019-10-17T14:11:51.834Z",
+    "updated_at": "2019-10-17T14:11:51.834Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 17,
+  "fields": {
+    "article": 11,
+    "text": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qu",
+    "author": "AmonymThree",
+    "created_at": "2019-10-17T14:11:57.174Z",
+    "updated_at": "2019-10-17T14:11:57.174Z"
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 4,
+  "fields": {
+    "name": "First Category"
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 5,
+  "fields": {
+    "name": "Second Category"
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 6,
+  "fields": {
+    "name": "Third Category"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 1,
+  "fields": {
+    "name": "Django",
+    "created_at": "2019-10-17T14:04:20.164Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 2,
+  "fields": {
+    "name": "Flask",
+    "created_at": "2019-10-17T14:04:24.785Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 3,
+  "fields": {
+    "name": "Pyramid",
+    "created_at": "2019-10-17T14:04:30.396Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 4,
+  "fields": {
+    "name": "Gears",
+    "created_at": "2019-10-17T14:04:35.072Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 5,
+  "fields": {
+    "name": "Tornado",
+    "created_at": "2019-10-17T14:04:41.333Z"
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$150000$rETxGUggP9m6$1+XpTSlJd0TUOGy4a5vygINOKbNt4VBXluA1qSdpgYY=",
-    "last_login": "2019-09-24T13:55:07.905Z",
+    "last_login": "2019-10-17T13:57:56.273Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -15,105 +277,6 @@
     "date_joined": "2019-09-03T14:37:10.646Z",
     "groups": [],
     "user_permissions": []
-  }
-},
-{
-  "model": "webapp.article",
-  "pk": 1,
-  "fields": {
-    "title": "Article",
-    "text": "Article 1",
-    "author": "Me",
-    "created_at": "2019-09-03T14:17:12.139Z",
-    "updated_at": "2019-09-03T14:22:09.383Z"
-  }
-},
-{
-  "model": "webapp.article",
-  "pk": 2,
-  "fields": {
-    "title": "Another One",
-    "text": "Another Article",
-    "author": "Me",
-    "created_at": "2019-09-03T14:06:09.002Z",
-    "updated_at": "2019-09-03T14:06:09.002Z"
-  }
-},
-{
-  "model": "webapp.article",
-  "pk": 3,
-  "fields": {
-    "title": "Article 3",
-    "text": "Article 3",
-    "author": "He",
-    "created_at": "2019-09-03T14:09:48.915Z",
-    "updated_at": "2019-09-03T14:09:48.915Z"
-  }
-},
-{
-  "model": "webapp.article",
-  "pk": 4,
-  "fields": {
-    "title": "Title",
-    "text": "Text",
-    "author": "Author",
-    "created_at": "2019-09-03T14:44:14.453Z",
-    "updated_at": "2019-09-03T14:44:14.453Z"
-  }
-},
-{
-  "model": "webapp.article",
-  "pk": 5,
-  "fields": {
-    "title": "Test",
-    "text": "Test",
-    "author": "Test",
-    "created_at": "2019-09-24T05:29:56.892Z",
-    "updated_at": "2019-09-24T05:29:56.892Z"
-  }
-},
-{
-  "model": "webapp.article",
-  "pk": 6,
-  "fields": {
-    "title": "Test 2",
-    "text": "Test 2",
-    "author": "Test 2",
-    "created_at": "2019-09-24T05:31:09.395Z",
-    "updated_at": "2019-09-24T05:31:09.395Z"
-  }
-},
-{
-  "model": "webapp.comment",
-  "pk": 1,
-  "fields": {
-    "article": 1,
-    "text": "Comment 1",
-    "author": "Vasya",
-    "created_at": "2019-09-24T13:57:52.192Z",
-    "updated_at": "2019-09-24T14:14:04.544Z"
-  }
-},
-{
-  "model": "webapp.comment",
-  "pk": 2,
-  "fields": {
-    "article": 1,
-    "text": "Comment 2",
-    "author": "Petya",
-    "created_at": "2019-09-24T13:59:48.693Z",
-    "updated_at": "2019-09-24T13:59:48.693Z"
-  }
-},
-{
-  "model": "webapp.comment",
-  "pk": 3,
-  "fields": {
-    "article": 1,
-    "text": "Comment 3",
-    "author": "\u0410\u043d\u043e\u043d\u0438\u043c",
-    "created_at": "2019-09-24T14:02:20.378Z",
-    "updated_at": "2019-09-24T14:02:20.378Z"
   }
 }
 ]
