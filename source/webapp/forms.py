@@ -1,21 +1,30 @@
 from django import forms
-from django.forms import widgets
-
-from webapp.models import Category, Article, Comment
+from webapp.models import Article, Comment, STATUS_ACTIVE
 
 
-class ArticleForm(forms.Form):
-    title = forms.CharField(max_length=200, label='Title', required=True)
-    author = forms.CharField(max_length=40, label='Author', required=True)
-    text = forms.CharField(max_length=3000, label='Text', required=True,
-                           widget=widgets.Textarea)
-    category = forms.ModelChoiceField(queryset=Category.objects.all(), required=False, label='Category',
-                                      empty_label=None)
+class ArticleForm(forms.ModelForm):
+    class Meta:
+        model = Article
+        exclude = ['created_at', 'updated_at']
 
 
-class CommentForm(forms.Form):
-    article = forms.ModelChoiceField(queryset=Article.objects.all().order_by('-created_at'), required=True, label='Article',
-                                     empty_label=None)
-    author = forms.CharField(max_length=40, required=False, label='Author', initial='Аноним')
-    text = forms.CharField(max_length=400, required=True, label='Text',
-                           widget=widgets.Textarea)
+class CommentForm(forms.ModelForm):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.fields['article'].queryset = Article.objects.filter(status=STATUS_ACTIVE)
+
+    # article = forms.ModelChoiceField(queryset=Article.objects.filter(status=STATUS_ACTIVE), label='Статья')
+
+    class Meta:
+        model = Comment
+        exclude = ['created_at', 'updated_at']
+
+
+class ArticleCommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['author', 'text']
+
+
+class SimpleSearchForm(forms.Form):
+    search = forms.CharField(max_length=100, required=False, label='Найти')
