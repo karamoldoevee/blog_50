@@ -6,7 +6,7 @@ from django.views.generic import ListView, DetailView, CreateView,\
     UpdateView, DeleteView
 
 from webapp.forms import ArticleForm, ArticleCommentForm, SimpleSearchForm
-from webapp.models import Article, STATUS_ARCHIVED, STATUS_ACTIVE
+from webapp.models import Article, STATUS_ARCHIVED, STATUS_ACTIVE, Tag
 from django.core.paginator import Paginator
 
 
@@ -80,6 +80,17 @@ class ArticleCreateView(CreateView):
     model = Article
     template_name = 'article/create.html'
 
+    def form_valid(self, form):
+        self.object = form.save()
+        self.tag_add()
+        return redirect(self.get_success_url())
+
+    def tag_add(self):
+        tags = self.request.POST.get('tags').split(',')
+        for tag in tags:
+            tag, _ = Tag.objects.get_or_create(name=tag)
+            self.object.tags.add(tag)
+
     def get_success_url(self):
         return reverse('article_view', kwargs={'pk': self.object.pk})
 
@@ -92,6 +103,7 @@ class ArticleUpdateView(UpdateView):
 
     def get_success_url(self):
         return reverse('article_view', kwargs={'pk': self.object.pk})
+
 
 
 class ArticleDeleteView(DeleteView):
