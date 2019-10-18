@@ -16,6 +16,11 @@
         at {{ article.created_at|date:'d.m.Y H:i:s' }}</p>
     <div class="pre">{{ article.text }}</div>
     <hr/>
+    <strong>Tags:
+        {% for tag in article.tags.all %}
+            <a href="?search={{ tag.name }}" > {{ tag.name }}</a>
+        {% endfor %}
+        </strong>
     <h3>Comments:</h3>
     {% if is_paginated %}
         {% include 'partial/pagination.html' %}
