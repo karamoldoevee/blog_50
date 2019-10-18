@@ -101,10 +101,34 @@ class ArticleUpdateView(UpdateView):
     form_class = ArticleForm
     context_object_name = 'article'
 
+    def form_valid(self, form):
+        self.object = form.save()
+        self.get_form()
+        self.tag_clear()
+        return redirect(self.get_success_url())
+
+    def add_tags(self):
+        tags = self.request.POST.get('tags').split(',')
+        for tag in tags:
+            tag, _ = Tag.objects.get_or_create(name=tag)
+            self.object.tags.add(tag)
+
+    def tag_clear(self):
+        clear = self.object.tags.clear()
+        self.add_tags()
+        return clear
+
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class=None)
+        tags = list(self.object.tags.all().values('name'))
+        tags_str = ''
+        for tag in tags:
+            tags_str += tag['name'] + ','
+        form.fields['tags'].initial = tags_str
+        return form
+
     def get_success_url(self):
         return reverse('article_view', kwargs={'pk': self.object.pk})
-
-
 
 class ArticleDeleteView(DeleteView):
     model = Article
