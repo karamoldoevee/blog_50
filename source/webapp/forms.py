@@ -61,3 +61,17 @@ class FullSearchForm(forms.Form):
     in_articles = forms.BooleanField(initial=True, required=False, label='Статей')
     in_comments = forms.BooleanField(initial=False, required=False, label='Комментариев')
 
+    def clean(self):
+        super().clean()
+        text = self.cleaned_data.get('text')
+        in_title = self.cleaned_data.get('in_title')
+        in_text = self.cleaned_data.get('in_text')
+        in_tags = self.cleaned_data.get('in_tags')
+        in_comment_text = self.cleaned_data.get('in_comment_text')
+        if text:
+            if not (in_title or in_text or in_tags or in_comment_text):
+                raise ValidationError(
+                    'One of the checkboxes: In Title, In Text, In Tags, In Comment text should be checked.',
+                    code='no_text_search_destination'
+                )
+        return self.cleaned_data
