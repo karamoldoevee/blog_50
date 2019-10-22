@@ -2,10 +2,10 @@ from django.db.models import Q
 from django.shortcuts import redirect
 from django.urls import reverse, reverse_lazy
 from django.utils.http import urlencode
-from django.views.generic import ListView, DetailView, CreateView,\
-    UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, \
+    UpdateView, DeleteView, FormView
 
-from webapp.forms import ArticleForm, ArticleCommentForm, SimpleSearchForm
+from webapp.forms import ArticleForm, ArticleCommentForm, SimpleSearchForm, FullSearchForm
 from webapp.models import Article, STATUS_ARCHIVED, STATUS_ACTIVE, Tag
 from django.core.paginator import Paginator
 
@@ -117,7 +117,7 @@ class ArticleUpdateView(UpdateView):
     def tag_clear(self):
         clear = self.object.tags.clear()
         self.add_tags()
-        return clear
+        return
 
     def get_form(self, form_class=None):
         form = super().get_form(form_class=None)
@@ -142,3 +142,10 @@ class ArticleDeleteView(DeleteView):
         self.object.status = STATUS_ARCHIVED
         self.object.save()
         return redirect(self.get_success_url())
+
+class ArticleSearchView(FormView):
+    template_name = 'article/search.html'
+    form_class = FullSearchForm
+
+    def form_valid(self, form):
+        return super().form_valid(form)
