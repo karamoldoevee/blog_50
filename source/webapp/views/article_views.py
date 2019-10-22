@@ -117,7 +117,7 @@ class ArticleUpdateView(UpdateView):
     def tag_clear(self):
         clear = self.object.tags.clear()
         self.add_tags()
-        return
+        return clear
 
     def get_form(self, form_class=None):
         form = super().get_form(form_class=None)

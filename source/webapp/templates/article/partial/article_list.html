@@ -8,5 +8,10 @@
         <a href="{% url 'article_update' article.pk %}">Edit</a>
         <a href="{% url "article_delete" article.pk %}">Delete</a>
     </p>
+    <strong>Tags:
+    {% for tag in article.tags.all %}
+        <a href="?search={{ tag.name }}" > {{ tag.name }}</a>
+    {% endfor %}
+    </strong>
     <hr/>
 {% endfor %}
